@@ -1,0 +1,13 @@
+.basket-image {
+    width: 36px;
+    aspect-ratio: 1/1;
+}
+
+.empty-shopping-cart{
+    text-align: center;
+    padding: 90px 12px 0 12px;
+}
+
+.empty-shopping-cart h2{
+    margin-bottom: 12px;
+}

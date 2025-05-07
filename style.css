@@ -6,7 +6,7 @@
 body {
   margin: 0;
   position: relative;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .padding-horizontal {
@@ -17,4 +17,8 @@ body {
 .padding-vertical {
   padding-top: var(--padding-vertical);
   padding-bottom: var(--padding-vertical);
+}
+
+.d-none {
+  display: none;
 }

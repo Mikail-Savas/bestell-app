@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/styles/restaurant-hero.css">
     <link rel="stylesheet" href="assets/styles/restaurant-info.css">
     <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
+    <link rel="stylesheet" href="assets/styles/empty-shopping-cart.css">
     <link rel="stylesheet" href="assets/styles/shopping-cart-section.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
 
@@ -81,10 +82,19 @@
       </main>
 
       <aside class="shopping-cart-sidebar">
-        <h2 class="shopping-cart-title">Warenkorb</h2>
-        <div class="shopping-cart-content" id="shopping-cart"></div>
+        <h2 class="shopping-cart-headline">Warenkorb</h2>
+
+        <div class="empty-shopping-cart">
+          <img src="assets/img/basket.svg" alt="basket image" class="basket-image">
+          <h2>Fülle deinen Warenkorb</h2>
+          <div>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</div>
+        </div>
+
+        <div class="shopping-cart" id="shopping-cart"></div>
         <div class="shopping-cart-footer"></div>
+        
       </aside>
+
       <section
         class="shopping-cart-section hide-on-laptop hide-on-desktop"
       ></section>

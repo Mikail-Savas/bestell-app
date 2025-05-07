@@ -51,7 +51,7 @@ const restaurant = {
   renderHero: () =>
     renderTemplate(refs.restaurantHero, getRestaurantHeroTemplate(restaurant)),
   renderInfo: () =>
-    renderTemplate(refs.restaurantInfo, getRestaurantInfoTemplate(restaurant))
+    renderTemplate(refs.restaurantInfo, getRestaurantInfoTemplate(restaurant)),
 };
 
 const shoppingCart = {
@@ -59,10 +59,40 @@ const shoppingCart = {
   isEmpty: function () {
     return this.items.length == 0;
   },
-  hasItem: function (item) {},
-  addItem: function (item) {},
-  removeItem: function (item) {},
-  getTotalPrice: function () {},
+  hasItem: function (item) {
+    return this.getItem(item) != undefined;
+  },
+  addItem: function (item) {
+    if (!this.hasItem(item)) {
+      item.quantity = 1;
+      this.items.push(item);
+    } else {
+      this.increaseQuantity(item);
+    }
+  },
+  /**
+   * requires hasItem(item);
+   */
+  removeItem: function (item) {
+    if (item.quantity == 1) {
+      let index = this.getIndex(item);
+      this.items.splice(index, 1);
+    } else {
+      this.decreaseQuantity(item);
+    }
+  },
+  decreaseQuantity: function (item) {
+    this.getItem(item).quantity -= 1;
+  },
+  increaseQuantity: function (item) {
+    this.getItem(item).quantity += 1;
+  },
+  getItem: function (item) {
+    return this.items.find((_item) => _item.id == item.id);
+  },
+  getIndex: function (item) {
+    return this.items.findIndex((_item) => _item.id == item.id);
+  },
   clear: function () {
     this.items = [];
   },
@@ -91,6 +121,7 @@ function getArrayFromLocalStorage(key) {
  */
 function formatToCurrency(price) {
   let result = price.toFixed(2);
-  result.replace('.', ',');
-  return result.concat(' €');S
+  result.replace(".", ",");
+  return result.concat(" €");
+  S;
 }

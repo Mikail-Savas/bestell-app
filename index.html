@@ -1,59 +1,96 @@
 <!DOCTYPE html>
 <html lang="de">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bestell App</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/styles/header.css">
-    <link rel="stylesheet" href="assets/styles/main-section.css">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css">
-    <link rel="stylesheet" href="assets/styles/shopping-cart-section.css">
-    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/header.css" />
+    <link rel="stylesheet" href="assets/styles/main-section.css" />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <link rel="stylesheet" href="assets/styles/restaurant-hero.css">
+    <link rel="stylesheet" href="assets/styles/restaurant-info.css">
+    <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
+    <link rel="stylesheet" href="assets/styles/shopping-cart-section.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+
+    <!-- Scripts -->
     <script src="script.js" defer></script>
+    <script src="assets/scripts/render.js"></script>
     <script src="assets/scripts/template.js"></script>
     <script src="assets/scripts/shopping-cart.js"></script>
     <script src="assets/scripts/test.js"></script>
-    <link rel="icon" href="assets/icons/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/favicon/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/icons/favicon/favicon-16x16.png"
+      href="assets/img/favicon/favicon-16x16.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/icons/favicon/favicon-32x32.png"
+      href="assets/img/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="assets/icons/favicon/android-chrome-192x192.png"
+      href="assets/img/favicon/android-chrome-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="assets/icons/favicon/android-chrome-512x512.png"
+      href="assets/img/favicon/android-chrome-512x512.png"
     />
   </head>
+
   <body onload="init()">
+
     <header class="padding-horizontal">
-      <img src="assets/icons/logo/Bestell App- Logo.svg" alt="logo image" class="header-logo">
+      <img
+        src="assets/img/logo/bestell-app-logo.svg"
+        alt="app logo"
+        class="header-logo"
+      />
     </header>
+
     <section class="main-section">
-      <main></main>
+      
+      <main>
+        <section class="restaurant-profile-section">
+          <section class="restaurant-hero" id="restaurant-hero"></section>
+          <section class="restaurant-info padding-horizontal" id="restaurant-info"></section>
+        </section>
+        <section class="restaurant-menu-section"></section>
+      </main>
+
       <aside class="shopping-cart-sidebar">
         <h2 class="shopping-cart-title">Warenkorb</h2>
         <div class="shopping-cart-content" id="shopping-cart"></div>
         <div class="shopping-cart-footer"></div>
       </aside>
-      <section class="shopping-cart-section hide-on-laptop hide-on-desktop"></section>
+      <section
+        class="shopping-cart-section hide-on-laptop hide-on-desktop"
+      ></section>
+
     </section>
+
     <footer></footer>
   </body>
 </html>

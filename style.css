@@ -1,0 +1,19 @@
+:root {
+  --padding-horizontal: 32px;
+  --padding-vertical: 160px;
+}
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+.padding-horizontal {
+    padding-left: var(--padding-horizontal);
+    padding-right: var(--padding-horizontal);
+}
+
+.padding-vertical {
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
+}

@@ -1,0 +1,11 @@
+header{
+    height: 112px;
+    display: flex;
+    align-items: center;
+    background-color: #FF8000;
+    filter: drop-shadow(2px 4px 6px #0e0e0e);
+}
+
+.header-logo{
+    height: 64px;
+}

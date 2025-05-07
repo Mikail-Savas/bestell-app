@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bestell App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/main-section.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css">
+    <link rel="stylesheet" href="assets/styles/shopping-cart-section.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
     <script src="script.js" defer></script>
     <link rel="icon" href="assets/icons/favicon/favicon.ico" />
     <link
@@ -33,11 +39,14 @@
     />
   </head>
   <body onload="init()">
-    <header></header>
+    <header class="padding-horizontal">
+      <img src="assets/icons/logo/Bestell App- Logo.svg" alt="logo image" class="header-logo">
+    </header>
     <section class="main-section">
       <main></main>
-      <aside></aside>
-      <footer></footer>
+      <aside class="shopping-cart-sidebar"></aside>
+      <section class="shopping-cart-section hide-on-laptop hide-on-desktop"></section>
     </section>
+    <footer></footer>
   </body>
 </html>

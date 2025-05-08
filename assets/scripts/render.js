@@ -6,7 +6,7 @@
  */
 function render(array, container, template) {
   container.innerHTML = "";
-  array.forEach(element => renderTemplate(container, template));
+  array.forEach(element => renderTemplate(container, template(element)));
 }
 
 /**

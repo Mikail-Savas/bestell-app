@@ -2,6 +2,7 @@ const refs = {
   shoppingCart: document.getElementById("shopping-cart"),
   restaurantHero: document.getElementById("restaurant-hero"),
   restaurantInfo: document.getElementById("restaurant-info"),
+  restaurantMenu: document.getElementById("restaurant-menu"),
 };
 
 const restaurant = {
@@ -23,8 +24,8 @@ const restaurant = {
     },
     {
       id: 2,
-      name: "Pizza Quattro Stagioni",
-      price: 12.5,
+      name: "Bruschetta",
+      price: 5.80
     },
     {
       id: 3,
@@ -47,7 +48,9 @@ const restaurant = {
     this.renderInfo();
     this.renderMenu();
   },
-  renderMenu: function () {},
+  renderMenu: function () {
+    render(this.dishes, refs.restaurantMenu, getMenuDishTemplate);
+  },
   renderHero: () =>
     renderTemplate(refs.restaurantHero, getRestaurantHeroTemplate(restaurant)),
   renderInfo: () =>
@@ -121,7 +124,6 @@ function getArrayFromLocalStorage(key) {
  */
 function formatToCurrency(price) {
   let result = price.toFixed(2);
-  result.replace(".", ",");
+  result = result.replace(".", ",");
   return result.concat(" €");
-  S;
 }

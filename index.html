@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +10,11 @@
     <link rel="stylesheet" href="assets/styles/header.css" />
     <link rel="stylesheet" href="assets/styles/main-section.css" />
     <link rel="stylesheet" href="assets/styles/main.css" />
-    <link rel="stylesheet" href="assets/styles/restaurant-hero.css">
-    <link rel="stylesheet" href="assets/styles/restaurant-info.css">
+    <link rel="stylesheet" href="assets/styles/restaurant-hero.css" />
+    <link rel="stylesheet" href="assets/styles/restaurant-info.css" />
+    <link rel="stylesheet" href="assets/styles/restaurant-menu.css" />
     <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
-    <link rel="stylesheet" href="assets/styles/empty-shopping-cart.css">
+    <link rel="stylesheet" href="assets/styles/empty-shopping-cart.css" />
     <link rel="stylesheet" href="assets/styles/shopping-cart-section.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
 
@@ -22,6 +22,7 @@
     <script src="script.js" defer></script>
     <script src="assets/scripts/render.js"></script>
     <script src="assets/scripts/template.js"></script>
+    <script src="assets/scripts/restaurant-menu.js" defer></script>
     <script src="assets/scripts/shopping-cart.js"></script>
     <script src="assets/scripts/test.js"></script>
 
@@ -62,7 +63,6 @@
   </head>
 
   <body onload="init()">
-
     <header class="padding-horizontal">
       <img
         src="assets/img/logo/bestell-app-logo.svg"
@@ -72,33 +72,43 @@
     </header>
 
     <section class="main-section">
-      
       <main>
         <section class="restaurant-profile-section">
           <section class="restaurant-hero" id="restaurant-hero"></section>
-          <section class="restaurant-info padding-horizontal" id="restaurant-info"></section>
+          <section
+            class="restaurant-info padding-horizontal padding-vertical"
+            id="restaurant-info"
+          ></section>
         </section>
-        <section class="restaurant-menu-section"></section>
-      </main>
+        <section class="restaurant-menu-section padding-horizontal">
+          <h2>Menü</h2>
+          <div class="restaurant-menu-content" id="restaurant-menu"></div>
+        </section>
+      </main>   
 
       <aside class="shopping-cart-sidebar">
         <h2 class="shopping-cart-headline">Warenkorb</h2>
 
         <div class="empty-shopping-cart">
-          <img src="assets/img/basket.svg" alt="basket image" class="basket-image">
+          <img
+            src="assets/img/basket.svg"
+            alt="basket image"
+            class="basket-image"
+          />
           <h2>Fülle deinen Warenkorb</h2>
-          <div>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</div>
+          <div>
+            Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
+            dein Essen.
+          </div>
         </div>
 
         <div class="shopping-cart" id="shopping-cart"></div>
         <div class="shopping-cart-footer"></div>
-        
       </aside>
 
       <section
         class="shopping-cart-section hide-on-laptop hide-on-desktop"
       ></section>
-
     </section>
 
     <footer></footer>

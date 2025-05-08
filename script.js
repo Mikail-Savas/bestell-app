@@ -1,8 +1,9 @@
 const refs = {
-  shoppingCart: document.getElementById("shopping-cart"),
   restaurantHero: document.getElementById("restaurant-hero"),
   restaurantInfo: document.getElementById("restaurant-info"),
   restaurantMenu: document.getElementById("restaurant-menu"),
+  emptyShoppingCart: document.getElementById("empty-shopping-cart"),
+  shoppingCart: document.getElementById("shopping-cart")
 };
 
 const restaurant = {
@@ -25,7 +26,7 @@ const restaurant = {
     {
       id: 2,
       name: "Bruschetta",
-      price: 5.80
+      price: 5.8,
     },
     {
       id: 3,
@@ -99,7 +100,13 @@ const shoppingCart = {
   clear: function () {
     this.items = [];
   },
-  render: function () {},
+  render: function () {
+    if (this.isEmpty()) {
+      refs.emptyShoppingCart.classList.remove("d-none");
+    } else {
+      refs.emptyShoppingCart.classList.add("d-none");
+    }
+  }
 };
 
 function init() {

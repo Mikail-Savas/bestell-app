@@ -9,6 +9,39 @@
   flex-direction: column;
 }
 
-.shopping-cart-headline{
+.shopping-cart-headline {
   text-align: center;
+}
+
+.shopping-cart {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.item-container:last-child{
+  border: none;
+}
+
+.item-container{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+h4 {
+  margin: 0;
+}
+
+.shopping-cart-footer {
+  height: 150px;
 }

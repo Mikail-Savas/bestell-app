@@ -3,7 +3,8 @@ const refs = {
   restaurantInfo: document.getElementById("restaurant-info"),
   restaurantMenu: document.getElementById("restaurant-menu"),
   emptyShoppingCart: document.getElementById("empty-shopping-cart"),
-  shoppingCart: document.getElementById("shopping-cart")
+  fullShoppingCart: document.getElementById("full-shopping-cart"),
+  shoppingCart: document.getElementById("shopping-cart"),
 };
 
 const restaurant = {
@@ -101,12 +102,16 @@ const shoppingCart = {
     this.items = [];
   },
   render: function () {
-    if (this.isEmpty()) {
-      refs.emptyShoppingCart.classList.remove("d-none");
-    } else {
-      refs.emptyShoppingCart.classList.add("d-none");
-    }
-  }
+    // if (this.isEmpty()) {
+    //   refs.emptyShoppingCart.classList.remove("d-none");
+    //   refs.fullShoppingCart.classList.add("d-none");
+    // } else {
+    //   refs.emptyShoppingCart.classList.add("d-none");
+    //   refs.fullShoppingCart.classList.remove("d-none");
+    // }
+  },
+  renderEmpty: function () {},
+  renderFull: function() {}
 };
 
 function init() {

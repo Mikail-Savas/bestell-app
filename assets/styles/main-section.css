@@ -1,5 +1,4 @@
 .main-section {
-  min-height: calc(200vh);
+  min-height: 200vh;
   display: flex;
-  position: relative;
 }

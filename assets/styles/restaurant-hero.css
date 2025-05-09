@@ -4,6 +4,7 @@
   background-position: right;
   height: 300px;
   position: relative;
+  z-index: 2;
 }
 
 .restaurant-logo {

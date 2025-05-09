@@ -1,47 +1,17 @@
 .shopping-cart-sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   width: 344px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
   background: #fff;
+  position: relative;
+}
+
+.shopping-cart-sidebar-content {
   display: flex;
   flex-direction: column;
-}
-
-.shopping-cart-headline {
-  text-align: center;
-}
-
-.shopping-cart {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.item-container:last-child{
-  border: none;
-}
-
-.item-container{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.item-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.item-controls {
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 
-h4 {
-  margin: 0;
-}
-
-.shopping-cart-footer {
-  height: 150px;
+.sticky {
+  position: sticky;
+  top: 0;
 }

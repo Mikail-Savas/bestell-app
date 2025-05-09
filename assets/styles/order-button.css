@@ -1,0 +1,21 @@
+.order-button {
+  background-color: #f57c00;
+  color: white;
+  font-weight: bold;
+  padding: 12px 0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out;
+  font-size: 20px;
+  width: 90%;
+}
+
+.order-button:hover {
+  background-color: rgba(239, 108, 0, 0.8);
+}
+
+.order-button:active {
+  background-color: #ef6c00;
+}

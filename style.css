@@ -19,9 +19,13 @@ body {
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .flex-1 {
   flex: 1;
+}
+
+.full-width {
+  width: 100%;
 }

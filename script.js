@@ -2,9 +2,9 @@ const refs = {
   restaurantHero: document.getElementById("restaurant-hero"),
   restaurantInfo: document.getElementById("restaurant-info"),
   restaurantMenu: document.getElementById("restaurant-menu"),
-  emptyShoppingCart: document.getElementById("empty-shopping-cart"),
-  fullShoppingCart: document.getElementById("full-shopping-cart"),
   shoppingCart: document.getElementById("shopping-cart"),
+  shoppingCartFooter: document.querySelector('.cart-footer'),
+  sidebar: document.querySelector('.sidebar-content'),
 };
 
 const restaurant = {
@@ -60,6 +60,7 @@ const restaurant = {
 };
 
 const shoppingCart = {
+  restaurant: restaurant,
   items: [],
   isEmpty: function () {
     return this.items.length == 0;
@@ -101,22 +102,58 @@ const shoppingCart = {
   clear: function () {
     this.items = [];
   },
-  render: function () {
-    // if (this.isEmpty()) {
-    //   refs.emptyShoppingCart.classList.remove("d-none");
-    //   refs.fullShoppingCart.classList.add("d-none");
-    // } else {
-    //   refs.emptyShoppingCart.classList.add("d-none");
-    //   refs.fullShoppingCart.classList.remove("d-none");
-    // }
+  getSubtotalPrice: function () {
+    return this.items.reduce((subTotal, item) => subTotal += item.price * item.quantity, 0);
   },
-  renderEmpty: function () {},
-  renderFull: function() {}
+  getTotalPrice: function () {
+    return this.getSubtotalPrice() + this.restaurant.details.deliveryPrice;
+  },
+  render: function () {
+    if(this.isEmpty()){
+      document.querySelector('.empty.sidebar-content').classList.remove('d-none');
+      document.querySelector('.filled.sidebar-content').classList.add('d-none');
+    } else{
+      document.querySelector('.empty.sidebar-content').classList.add('d-none');
+      document.querySelector('.filled.sidebar-content').classList.remove('d-none');
+    }
+    this.renderCart();
+    this.renderFooter();
+  },
+  renderEmpty: function () {
+    renderTemplate(document.querySelector('.empty.sidebar-content'), getEmptyShoppingCartTemplate());
+  },
+  renderCart: function () {
+    render(this.items, refs.shoppingCart, getShoppingCartItemTemplate);
+  },
+  renderFooter: function () {
+    refs.shoppingCartFooter.innerHTML = '';
+    renderTemplate(refs.shoppingCartFooter, getShoppingCartFooterTemplate(shoppingCart));
+  }
 };
+
+const sidebar = {
+  updateHeight: function (height) {
+    refs.sidebar.style.height = height + 'px';
+  },
+  synchronize: function () {
+    const header = document.querySelector('header');
+    const mainSection = document.querySelector('.main-section');
+    let newHeight = window.innerHeight;
+    if (window.pageYOffset <= header.clientHeight) {
+      newHeight -= (header.clientHeight - window.pageYOffset);
+    } else if (window.pageYOffset + window.innerHeight >= header.clientHeight + mainSection.clientHeight) {
+      newHeight -= (window.pageYOffset + window.innerHeight) - (header.clientHeight + mainSection.clientHeight);
+    }
+    sidebar.updateHeight(newHeight.toFixed(0));
+  }
+}
 
 function init() {
   shoppingCart.items = getArrayFromLocalStorage("cartItems");
   restaurant.render();
+  shoppingCart.renderEmpty();
+  shoppingCart.render();
+  synchronizeSidebar();
 }
 
 function saveToLocalStorage(key, item) {

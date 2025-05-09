@@ -1,111 +1,84 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bestell App</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bestell App</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/styles/header.css" />
-    <link rel="stylesheet" href="assets/styles/main-section.css" />
-    <link rel="stylesheet" href="assets/styles/restaurant-hero.css" />
-    <link rel="stylesheet" href="assets/styles/restaurant-info.css" />
-    <link rel="stylesheet" href="assets/styles/restaurant-menu.css" />
-    <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
-    <link rel="stylesheet" href="assets/styles/empty-shopping-cart.css" />
-    <link rel="stylesheet" href="assets/styles/shopping-cart.css" />
-    <link rel="stylesheet" href="assets/styles/shopping-cart-footer.css" />
-    <link rel="stylesheet" href="assets/styles/order-summary.css" />
-    <link rel="stylesheet" href="assets/styles/order-button.css" />
-    <link rel="stylesheet" href="assets/styles/footer.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/styles/header.css" />
+  <link rel="stylesheet" href="assets/styles/main-section.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant-hero.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant-info.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant-menu.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart-empty.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart-footer.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart-item.css">
+  <link rel="stylesheet" href="assets/styles/order-summary.css" />
+  <link rel="stylesheet" href="assets/styles/order-button.css" />
+  <link rel="stylesheet" href="assets/styles/footer.css" />
 
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
-    <script src="assets/scripts/render.js"></script>
-    <script src="assets/scripts/template.js"></script>
-    <script src="assets/scripts/restaurant-menu.js" defer></script>
-    <script src="assets/scripts/shopping-cart.js"></script>
-    <script src="assets/scripts/test.js" defer></script>
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script src="assets/scripts/render.js"></script>
+  <script src="assets/scripts/template.js"></script>
+  <script src="assets/scripts/shopping-cart.js"></script>
+  <script src="assets/scripts/sidebar.js" defer></script>
+  <script src="assets/scripts/test.js" defer></script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="assets/img/favicon/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/img/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/img/favicon/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/img/favicon/android-chrome-512x512.png"
-    />
-  </head>
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon/android-chrome-512x512.png" />
+</head>
 
-  <body onload="init()">
-    <header class="padding-horizontal">
-      <img
-        src="assets/img/logo/bestell-app-logo.svg"
-        alt="app logo"
-        class="header-logo"
-      />
-    </header>
+<body onload="init()" onscroll="synchronizeSidebar()">
+  <header class="padding-horizontal">
+    <img src="assets/img/logo/bestell-app-logo.svg" alt="app logo" class="header-logo" />
+  </header>
 
-    <section class="main-section">
+  <section class="main-section">
 
-      <!-- restaurant -->
-      <main class="flex-1">
-        <!-- restaurant profile -->
-        <section class="restaurant-profile-section">
-          <section class="restaurant-hero" id="restaurant-hero"></section>
-          <section
-            class="restaurant-info padding-horizontal padding-vertical"
-            id="restaurant-info"
-          ></section>
-        </section>
+    <!-- restaurant -->
+    <main class="flex-1">
+      <!-- restaurant profile -->
+      <section class="restaurant-profile-section">
+        <section class="restaurant-hero" id="restaurant-hero"></section>
+        <section class="restaurant-info padding-horizontal padding-vertical" id="restaurant-info"></section>
+      </section>
 
-        <!-- restaurant menu -->
-        <section class="restaurant-menu-section padding-horizontal">
-          <h2>Menü</h2>
-          <div class="restaurant-menu-content" id="restaurant-menu"></div>
-        </section>
-      </main>
+      <!-- restaurant menu -->
+      <section class="restaurant-menu-section padding-horizontal">
+        <h2>Menü</h2>
+        <div class="restaurant-menu-content" id="restaurant-menu"></div>
+      </section>
+    </main>
 
-      <!-- shopping cart -->
-      <aside class="shopping-cart-sidebar hide-on-mobile">
-        <div class="shopping-cart-sidebar-content sticky">
-          <h2>Warenkorb</h2>
-          <div class="empty-shopping-cart" id="empty-shopping-cart"></div>
-          <div class="full-shopping-cart d-none" id="full-shopping-cart"></div>
-        </div>
-      </aside>
+    <!-- shopping cart -->
+    <aside class="sidebar hide-on-mobile">
+      <div class="sidebar-content sticky filled d-none">
+        <h2>Warenkorb</h2>
+        <div class="cart-items flex-1" id="shopping-cart"></div>
+        <div class="cart-footer full-width"></div>
+      </div>
+      <div class="sidebar-content sticky empty"></div>
+    </aside>
 
-      <!-- shopping cart mobile, tablet -->
-      <section class="shopping-cart-section show-on-mobile"></section>
-    </section>
+    <!-- shopping cart mobile, tablet -->
+    <section class="shopping-cart-section show-on-mobile"></section>
+  </section>
 
-    <footer></footer>
-  </body>
+  <footer></footer>
+</body>
 </html>

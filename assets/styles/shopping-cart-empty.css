@@ -3,11 +3,11 @@
     aspect-ratio: 1/1;
 }
 
-.empty-shopping-cart{
+.content-empty{
     text-align: center;
     padding: 90px 12px 0 12px;
 }
 
-.empty-shopping-cart h2{
+.content-empty h2{
     margin-bottom: 12px;
 }

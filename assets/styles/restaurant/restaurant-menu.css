@@ -8,10 +8,10 @@
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-.dish-container:last-child{
+.dish-container:last-child {
   margin: 0;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .restaurant-menu-section {
-  padding-bottom: 100px;
+  padding-bottom: 64px;
 }
 
 .dish-image-wrapper {
@@ -38,6 +38,10 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   background: white;
+}
+
+.dish-info {
+  flex: 1;
 }
 
 .add-dish-button {
@@ -58,6 +62,6 @@
   cursor: pointer;
 }
 
-.add-dish-button:hover{
-  background-color: rgba(245,245,245, 0.4);
+.add-dish-button:hover {
+  background-color: rgba(245, 245, 245, 0.4);
 }

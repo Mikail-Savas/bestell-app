@@ -9,24 +9,26 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assets/styles/header.css" />
   <link rel="stylesheet" href="assets/styles/main-section.css" />
-  <link rel="stylesheet" href="assets/styles/restaurant-hero.css" />
-  <link rel="stylesheet" href="assets/styles/restaurant-info.css" />
-  <link rel="stylesheet" href="assets/styles/restaurant-menu.css" />
-  <link rel="stylesheet" href="assets/styles/shopping-cart-sidebar.css" />
-  <link rel="stylesheet" href="assets/styles/shopping-cart-empty.css" />
-  <link rel="stylesheet" href="assets/styles/shopping-cart-footer.css" />
-  <link rel="stylesheet" href="assets/styles/shopping-cart-item.css">
-  <link rel="stylesheet" href="assets/styles/order-summary.css" />
-  <link rel="stylesheet" href="assets/styles/order-button.css" />
   <link rel="stylesheet" href="assets/styles/footer.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant/restaurant-hero.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant/restaurant-info.css" />
+  <link rel="stylesheet" href="assets/styles/restaurant/restaurant-menu.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/shopping-cart-sidebar.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/shopping-cart-empty.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/shopping-cart-footer.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/shopping-cart-item.css">
+  <link rel="stylesheet" href="assets/styles/shopping-cart/order-summary.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/order-button.css" />
+  <link rel="stylesheet" href="assets/styles/shopping-cart/continue-button.css">
+  <link rel="stylesheet" href="assets/styles/responsive/responsive-shopping-cart.css">
 
   <!-- Scripts -->
-  <script src="script.js" defer></script>
+   <script src="script.js" defer></script>
   <script src="assets/scripts/render.js"></script>
   <script src="assets/scripts/template.js"></script>
   <script src="assets/scripts/shopping-cart.js"></script>
   <script src="assets/scripts/sidebar.js" defer></script>
-  <script src="assets/scripts/test.js" defer></script>
+  <script src="assets/scripts/responsive.js" defer></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,9 +45,11 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon/android-chrome-512x512.png" />
 </head>
 
-<body onload="init()" onscroll="synchronizeSidebar()">
+<body onload="init()">
   <header class="padding-horizontal">
-    <img src="assets/img/logo/bestell-app-logo.svg" alt="app logo" class="header-logo" />
+    <a href="index.html" class="homepage-link"><img src="assets/img/logo/bestell-app-logo.svg" alt="app logo" class="header-logo" /></a>
+    <img src="assets/img/header-basket-32.png" alt="shopping cart icon" class="header-logo show-on-mobile cart-icon" onclick="openSidebar()">
+    <img src="assets/img/header-basket-64.png" alt="shopping cart icon" class="header-logo show-on-tablet cart-icon" onclick="openSidebar()">
   </header>
 
   <section class="main-section">
@@ -66,7 +70,7 @@
     </main>
 
     <!-- shopping cart -->
-    <aside class="sidebar hide-on-mobile">
+    <aside class="sidebar">
       <div class="sidebar-content sticky filled d-none">
         <h2>Warenkorb</h2>
         <div class="cart-items flex-1" id="shopping-cart"></div>
@@ -75,8 +79,6 @@
       <div class="sidebar-content sticky empty"></div>
     </aside>
 
-    <!-- shopping cart mobile, tablet -->
-    <section class="shopping-cart-section show-on-mobile"></section>
   </section>
 
   <footer></footer>

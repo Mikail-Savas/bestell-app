@@ -32,7 +32,7 @@ function getMenuDishTemplate(dish) {
     </div>
     <div class="dish-image-wrapper">
       <img
-        src="../assets/img/restaurant-menu/dish-${dish.id}.jpg"
+        src="assets/img/restaurant-menu/dish-${dish.id}.jpg"
         alt="dish image"
         class="dish-image"
       />
@@ -57,6 +57,7 @@ function getEmptyShoppingCartTemplate() {
   />
   <h2>Fülle deinen Warenkorb</h2>
   <div>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</div>
+  <button class="continue-button show-on-tablet show-on-mobile" onclick="closeSidebar()">Jetzt einkaufen</button>
   </div>
   `;
 }
@@ -96,6 +97,7 @@ function getShoppingCartFooterTemplate(shoppingCart) {
       <span>${formatToCurrency(shoppingCart.getTotalPrice())}</span>
     </div>
   </div>
-  <button type="button" class="order-button">Bezahlen (${formatToCurrency(shoppingCart.getTotalPrice())})</button>
+  <button class="continue-button show-on-mobile show-on-tablet" onclick="closeSidebar()">Weiter einkaufen</button>
+  <button type="submit" class="order-button" onclick="submitOrder()">Bezahlen (${formatToCurrency(shoppingCart.getTotalPrice())})</button>
   `;
 }

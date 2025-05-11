@@ -1,0 +1,19 @@
+.continue-button {
+    background-color: #ffffff;
+    color: #f86300;
+    border: 2px solid #f86300;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 90%;
+    border-radius: 600px;
+    font-size: 20px;
+}
+
+.continue-button:hover {
+    background-color: #f86300;
+    color: #ffffff;
+}

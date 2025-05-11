@@ -1,5 +1,11 @@
 function synchronizeSidebar() {
-    if (!shoppingCart.isEmpty()) {
-        sidebar.synchronize();
-    }
+    sidebar.synchronize();
+}
+
+function openSidebar() {
+    sidebar.open();
+}
+
+function closeSidebar() {
+    sidebar.close();
 }

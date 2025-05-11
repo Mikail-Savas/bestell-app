@@ -4,15 +4,15 @@ const refs = {
   restaurantMenu: document.getElementById("restaurant-menu"),
   shoppingCart: document.getElementById("shopping-cart"),
   shoppingCartFooter: document.querySelector('.cart-footer'),
-  sidebar: document.querySelector('.sidebar-content'),
+  sidebar: document.querySelector('aside.sidebar')
 };
 
 const restaurant = {
   name: "La Bella Tavola",
   description:
     "Ein gemütliches italienisches Restaurant mit einer breiten Auswahl an authentischen Gerichten und einer warmen Atmosphäre.",
-  logoSrc: "../assets/img/logo/restaurant-logo.png",
-  bannerSrc: "../assets/img/restaurant-banner.jpg",
+  logoSrc: "assets/img/logo/restaurant-logo.png",
+  bannerSrc: "assets/img/restaurant-banner.jpg",
   details: {
     rating: 4.5,
     minimumOrderPrice: 20,
@@ -109,10 +109,10 @@ const shoppingCart = {
     return this.getSubtotalPrice() + this.restaurant.details.deliveryPrice;
   },
   render: function () {
-    if(this.isEmpty()){
+    if (this.isEmpty()) {
       document.querySelector('.empty.sidebar-content').classList.remove('d-none');
       document.querySelector('.filled.sidebar-content').classList.add('d-none');
-    } else{
+    } else {
       document.querySelector('.empty.sidebar-content').classList.add('d-none');
       document.querySelector('.filled.sidebar-content').classList.remove('d-none');
     }
@@ -132,8 +132,15 @@ const shoppingCart = {
 };
 
 const sidebar = {
+  content: document.querySelector('.sidebar-content'),
+  open: function () {
+    refs.sidebar.classList.remove('d-none');
+  },
+  close: function () {
+    refs.sidebar.classList.add('d-none');
+  },
   updateHeight: function (height) {
-    refs.sidebar.style.height = height + 'px';
+    sidebar.content.style.height = height + 'px';
   },
   synchronize: function () {
     const header = document.querySelector('header');
@@ -149,11 +156,12 @@ const sidebar = {
 }
 
 function init() {
+  applyResponsiveDesign();
+  sidebar.synchronize();
   shoppingCart.items = getArrayFromLocalStorage("cartItems");
   restaurant.render();
   shoppingCart.renderEmpty();
   shoppingCart.render();
-  synchronizeSidebar();
 }
 
 function saveToLocalStorage(key, item) {
@@ -167,7 +175,7 @@ function getArrayFromLocalStorage(key) {
 
 /**
  * Format a number in EUR currency style.
- * E.g. 4.73 -> "4,73"
+ * E.g. 4.73 -> "4,73 €"
  * @param {Number} price The number to format
  * @returns {String} Formatted price string in EUR.
  */

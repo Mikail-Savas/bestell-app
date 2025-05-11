@@ -28,13 +28,18 @@
   <link rel="stylesheet" href="assets/styles/responsive/responsive-mobile.css">
 
   <!-- Scripts -->
-  <script src="script.js" defer></script>
-  <script src="assets/scripts/render.js"></script>
-  <script src="assets/scripts/template.js"></script>
-  <script src="assets/scripts/shopping-cart.js"></script>
+  <script src="assets/scripts/db.js" defer></script>
+  <script src="assets/scripts/format.js" defer></script>
+  <script src="assets/scripts/localStorage.js" defer></script>
+  <script src="assets/scripts/render.js" defer></script>
+  <script src="assets/scripts/template.js" defer></script>
+  <script src="assets/scripts/restaurant.js" defer></script>
   <script src="assets/scripts/sidebar.js" defer></script>
+  <script src="assets/scripts/shopping-cart.js" defer></script>
+  <script src="script.js" defer></script>
   <script src="assets/scripts/responsive.js" defer></script>
   <script src="assets/scripts/toaster.js" defer></script>
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,12 +60,10 @@
   <header class="padding-horizontal">
     <a href="index.html" class="homepage-link"><img src="assets/img/logo/bestell-app-logo.svg" alt="app logo"
         class="header-logo" /></a>
-    <div class="cart-icon">
-      <img src="assets/img/header-basket-32.png" alt="shopping cart icon" class="header-logo show-on-mobile cart-icon"
-        onclick="openSidebar()">
-      <img src="assets/img/header-basket-64.png" alt="shopping cart icon" class="header-logo show-on-tablet cart-icon"
-        onclick="openSidebar()">
-    </div>
+    <img src="assets/img/header-basket-32.png" alt="shopping cart icon" class="header-logo show-on-mobile cart-icon"
+      onclick="openSidebar()">
+    <img src="assets/img/header-basket-64.png" alt="shopping cart icon" class="header-logo show-on-tablet cart-icon"
+      onclick="openSidebar()">
   </header>
 
   <section class="main-section">

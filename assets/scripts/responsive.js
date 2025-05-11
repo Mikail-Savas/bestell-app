@@ -15,5 +15,6 @@ function applyResponsiveDesign() {
     } else {
         window.addEventListener('scroll', synchronizeSidebar);
         refs.sidebar.classList.remove('d-none');
+        document.body.style.overflow = 'unset';
     }
 }

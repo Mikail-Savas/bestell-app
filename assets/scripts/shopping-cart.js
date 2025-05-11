@@ -13,9 +13,9 @@ function removeDishFromShoppingCart(dishId) {
 }
 
 function submitOrder() {
+    toast('Bestellung erfolgreich abgeschickt! Vielen Dank für deinen Einkauf. Mehr Info in der Konsole.');
     console.table(shoppingCart.items);
     shoppingCart.clear();
     shoppingCart.render();
     saveToLocalStorage('cartItems', shoppingCart.items);
-    alert('Vielen Dank für deine Bestellung! Deine Bestellung liegt in der Konsole.')
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,15 +21,20 @@
   <link rel="stylesheet" href="assets/styles/shopping-cart/order-summary.css" />
   <link rel="stylesheet" href="assets/styles/shopping-cart/order-button.css" />
   <link rel="stylesheet" href="assets/styles/shopping-cart/continue-button.css">
-  <link rel="stylesheet" href="assets/styles/responsive/responsive-shopping-cart.css">
+  <link rel="stylesheet" href="assets/styles/toaster.css">
+
+  <link rel="stylesheet" href="assets/styles/responsive/responsive.css">
+  <link rel="stylesheet" href="assets/styles/responsive/responsive-tablet.css">
+  <link rel="stylesheet" href="assets/styles/responsive/responsive-mobile.css">
 
   <!-- Scripts -->
-   <script src="script.js" defer></script>
+  <script src="script.js" defer></script>
   <script src="assets/scripts/render.js"></script>
   <script src="assets/scripts/template.js"></script>
   <script src="assets/scripts/shopping-cart.js"></script>
   <script src="assets/scripts/sidebar.js" defer></script>
   <script src="assets/scripts/responsive.js" defer></script>
+  <script src="assets/scripts/toaster.js" defer></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,9 +53,14 @@
 
 <body onload="init()">
   <header class="padding-horizontal">
-    <a href="index.html" class="homepage-link"><img src="assets/img/logo/bestell-app-logo.svg" alt="app logo" class="header-logo" /></a>
-    <img src="assets/img/header-basket-32.png" alt="shopping cart icon" class="header-logo show-on-mobile cart-icon" onclick="openSidebar()">
-    <img src="assets/img/header-basket-64.png" alt="shopping cart icon" class="header-logo show-on-tablet cart-icon" onclick="openSidebar()">
+    <a href="index.html" class="homepage-link"><img src="assets/img/logo/bestell-app-logo.svg" alt="app logo"
+        class="header-logo" /></a>
+    <div class="cart-icon">
+      <img src="assets/img/header-basket-32.png" alt="shopping cart icon" class="header-logo show-on-mobile cart-icon"
+        onclick="openSidebar()">
+      <img src="assets/img/header-basket-64.png" alt="shopping cart icon" class="header-logo show-on-tablet cart-icon"
+        onclick="openSidebar()">
+    </div>
   </header>
 
   <section class="main-section">
@@ -81,6 +92,9 @@
 
   </section>
 
+  <div id="snackbar"></div>
+
   <footer></footer>
 </body>
+
 </html>
